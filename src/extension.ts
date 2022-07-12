@@ -1,26 +1,22 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { registerCommands } from './vscode/commands';
+import { loadSettings } from './vscode/settings';
+import { activatePannels } from './vscode/pannels';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "dinovel-vscode" is now active!');
+  // Commands are always registered in the extension context.
+  registerCommands(context);
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('dinovel-vscode.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from dinovel-vscode!');
-	});
+  // Settings are loaded on activation.
+  const settings = loadSettings();
 
-	context.subscriptions.push(disposable);
+  if (!settings.enabled) {
+    console.warn('Dinovel is disabled for this workspace.');
+    return;
+  }
+
+  // Pannels are activated per configuration.
+  activatePannels(settings);
 }
 
-// this method is called when your extension is deactivated
 export function deactivate() {}
