@@ -1,9 +1,5 @@
 import * as vscode from 'vscode';
-
-export interface Settings {
-  enabled: boolean;
-  status: boolean;
-}
+import type { Settings } from '../models';
 
 export function loadSettings(): Settings {
   const config = vscode.workspace.getConfiguration('dinovel');

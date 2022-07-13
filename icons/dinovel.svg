@@ -1,0 +1,22 @@
+<svg width="512" height="512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+    <g style="display:inline">
+        <g style="fill:none;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1">
+            <g style="fill:none;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1">
+                <path style="fill:none;fill-opacity:1;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1" d="M409.225 294.368V340.5h30v-95.545c-.001 19.163-12.917 39.71-30 49.413z" transform="matrix(1.09345 0 0 1.07635 23.645 9.351)"/>
+                <path style="fill:none;fill-opacity:1;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1" d="M439.225 50c0-27.5-22.5-50-50-50h-20c-16.5 0-30 13.5-30 30v20h39.786v108.391h-66.365c-57.25 0-105.623 38.008-121.263 90.167.009.003 60.742.003 60.742.003 41.173 0 74.86 33.687 74.86 74.86l52.24-17.896v-.268l-.013-.05v.05c-16.492 0-29.987-13.506-29.987-30.011l.013-34.989h29.987l-.007 35.048c.007-.025 30.007-.025 30.007-.025v19.089c17.083-9.703 29.999-30.25 30-49.413V50z" transform="matrix(1.09345 0 0 1.07635 23.645 9.351)"/>
+                <path style="fill:none;fill-opacity:1;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1" d="M239.367 273.338a67.52 67.52 0 0 1 4.697-24.777h-52.672a126.57 126.57 0 0 0-5.324 36.409v94.996c0 22.065-17.952 40.017-40.017 40.017H20.775V460h125.276c44.131 0 80.034-35.903 80.034-80.034v-13.5h55.795v-30.27c-24.913-10.004-42.513-34.368-42.513-62.858z" transform="matrix(1.09345 0 0 1.07635 23.645 9.351)"/>
+                <path style="fill:none;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1" d="M326.88 366.466h.105v-28.374l-.105.03z" transform="matrix(1.09345 0 0 1.07635 23.645 9.351)"/>
+                <path style="fill:none;fill-opacity:1;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1" d="M326.985 323.42c0-41.173-33.687-74.86-74.86-74.86h-8.061a67.524 67.524 0 0 0-4.697 24.777c0 28.49 17.6 52.854 42.513 62.858V460h45V338.122l.105-.03zM409.225 275.279h-30c-.007.025 0-35.023 0-35.023h-29.987l-.013 34.989c0 16.505 13.495 30.011 29.987 30.011v-.05l.013.05v35.023h30z" transform="matrix(1.09345 0 0 1.07635 23.645 9.351)"/>
+            </g>
+        </g>
+        <g style="fill:none;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1">
+            <g style="fill:none;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1">
+                <path style="fill:none;fill-opacity:1;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1" d="m291.769 164.257-31.943-76.839a8.183 8.183 0 0 0-.216-.477c-12.686-25.945-44.114-36.73-70.061-24.045a52.496 52.496 0 0 0-8.951 5.557h-64.197a52.387 52.387 0 0 0-8.952-5.557c-25.942-12.685-57.374-1.901-70.06 24.045a8.909 8.909 0 0 0-.216.477L5.231 164.257c-6.037 12.507-6.88 26.618-2.368 39.764 4.541 13.232 13.964 23.905 26.532 30.05 12.57 6.147 26.778 7.029 40.011 2.488 13.232-4.542 23.904-13.965 30.05-26.532l5.226-10.687h87.635l5.226 10.686c6.146 12.568 16.817 21.991 30.05 26.533a52.454 52.454 0 0 0 17.047 2.863c7.866 0 15.69-1.794 22.963-5.352 12.569-6.145 21.992-16.817 26.533-30.05 4.513-13.145 3.669-27.256-2.367-39.763z" transform="scale(1.2175 1.19847) rotate(-45 126.955 158.932)"/>
+                <path style="fill:none;fill-opacity:1;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1" d="m291.769 164.257-31.943-76.839a8.183 8.183 0 0 0-.216-.477c-12.686-25.945-44.114-36.73-70.061-24.045a52.496 52.496 0 0 0-8.951 5.557h-33.45v130.888h45.169l5.226 10.686c6.146 12.568 16.817 21.991 30.05 26.533a52.454 52.454 0 0 0 17.047 2.863c7.866 0 15.69-1.794 22.963-5.352 12.569-6.145 21.992-16.817 26.533-30.05 4.513-13.146 3.669-27.257-2.367-39.764z" transform="scale(1.2175 1.19847) rotate(-45 126.955 158.932)"/>
+                <g style="fill:none;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1">
+                    <path style="fill:none;fill-opacity:1;stroke:#000;stroke-width:24;stroke-dasharray:none;stroke-opacity:1" d="M92.756 98.368c-16.487 0-29.899 13.413-29.899 29.899s13.413 29.899 29.899 29.899 29.899-13.413 29.899-29.899-13.413-29.899-29.899-29.899zM202.217 98.368c-16.487 0-29.899 13.413-29.899 29.899s13.413 29.899 29.899 29.899 29.899-13.413 29.899-29.899-13.412-29.899-29.899-29.899z" transform="scale(1.2175 1.19847) rotate(-45 126.955 158.932)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

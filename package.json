@@ -2,6 +2,11 @@
   "name": "dinovel.vscode",
   "displayName": "Dinovel",
   "description": "Dinovel development tools for VSCode",
+  "author": {
+    "name": "Dinovel",
+    "url": "https://dinovel.io"
+  },
+  "publisher": "Dinovel",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.69.0"
@@ -9,21 +14,20 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": ["*"],
+  "activationEvents": [
+    "*"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "dinovel.runCmd",
-        "title": "Dinovel: Run Command"
+        "command": "dinovel.runCommand",
+        "title": "Dinovel: Interactive command"
       },
       {
-        "command": "dinovel.createChar",
-        "title": "Dinovel: Create character"
-      },
-      {
-        "command": "dinovel.reloadResx",
-        "title": "Dinovel: Reload resources"
+        "command": "dinovel.reloadAssets",
+        "title": "Dinovel: Reload assets",
+        "icon": "$(refresh)"
       }
     ],
     "configuration": {
@@ -40,6 +44,42 @@
           "description": "Show/Hide Dinovel status bar item"
         }
       }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "dinovel-view",
+          "title": "Dinovel",
+          "icon": "./icons/dinovel.svg"
+        }
+      ]
+    },
+    "views": {
+      "dinovel-view": [
+        {
+          "id": "dinovel-assets",
+          "contextualTitle": "Dinovel: Assets",
+          "name": "Assets",
+          "visibility": "visible",
+          "when": "config.dinovel.enabled && workspaceFolderCount > 0"
+        },
+        {
+          "id": "dinovel-resources",
+          "contextualTitle": "Dinovel: Resources",
+          "name": "Resources",
+          "visibility": "collapsed",
+          "when": "config.dinovel.enabled && workspaceFolderCount > 0"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "dinovel.reloadAssets",
+          "group": "navigation",
+          "when": "view == dinovel-assets"
+        }
+      ]
     }
   },
   "scripts": {

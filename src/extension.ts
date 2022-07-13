@@ -1,22 +1,19 @@
 import * as vscode from 'vscode';
-import { registerCommands } from './vscode/commands';
-import { loadSettings } from './vscode/settings';
-import { activatePannels } from './vscode/pannels';
+
+import { initExtension } from './modules';
+import { selectUniqueWorkspace } from './utils';
+import { loadSettings } from './infra';
 
 export function activate(context: vscode.ExtensionContext) {
-  // Commands are always registered in the extension context.
-  registerCommands(context);
-
-  // Settings are loaded on activation.
+  const workspace = selectUniqueWorkspace();
   const settings = loadSettings();
 
-  if (!settings.enabled) {
-    console.warn('Dinovel is disabled for this workspace.');
-    return;
-  }
+  if (!workspace) { throw new Error('No workspace found'); }
 
-  // Pannels are activated per configuration.
-  activatePannels(settings);
+  initExtension(context, {
+    settings,
+    workspace,
+  });
 }
 
 export function deactivate() {}

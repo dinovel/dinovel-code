@@ -1,33 +1,13 @@
-import * as vscode from 'vscode';
+import * as fs from 'fs';
+import * as path from 'path';
 
-export async function selectWorkspaceFolder(): Promise<string | undefined> {
-  const wk = vscode.workspace.workspaceFolders;
-  if (!wk?.length) { return undefined; }
-
-  if (wk.length === 1) { return cleanWindowsPath(wk[0].uri.path); }
-
-  const wkNames = wk.map(w => w.name);
-
-  return await vscode.window.showQuickPick(wkNames, {
-    canPickMany: false,
-    title: 'Select workspace folder'
-  });
-}
+import type { LocalFile } from '../models';
 
 export function cleanWindowsPath(path: string): string {
   if (!path || !path.startsWith('/')) { return path; }
   const isWindows = /^win/.test(process.platform);
   if (!isWindows) { return path; }
   return path.substring(1);
-}
-
-import * as fs from 'fs';
-import * as path from 'path';
-
-export interface LocalFile {
-  path: string;
-  extension: string;
-  name: string;
 }
 
 export function listAllFiles(target: string) {
@@ -48,4 +28,9 @@ export function listAllFiles(target: string) {
     }
   }
   return result;
+}
+
+export function ensureDir(dir: string) {
+  if (fs.existsSync(dir)) { return; }
+  fs.mkdirSync(dir, { recursive: true });
 }
