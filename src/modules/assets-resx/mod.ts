@@ -11,12 +11,15 @@ import {
   buildDelTagCommand,
 } from './commands';
 
+import { buildAssetsWatcher } from './watcher';
+
 export const ASSETS_RESX_MODULE: ExtensionModule = {
   init: async (context, { workspace }) => {
     context.subscriptions.push(buildReloadAssetsCmd(workspace));
     context.subscriptions.push(buildAddTagCommand());
     context.subscriptions.push(buildDelTagCommand());
     context.subscriptions.push(buildAssetsView());
+    context.subscriptions.push(buildAssetsWatcher(workspace));
     DinovelAssets.update();
   }
 };

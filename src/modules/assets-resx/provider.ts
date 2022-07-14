@@ -37,7 +37,7 @@ export class AssetsTreeViewProvider implements vscode.TreeDataProvider<AssetTree
 
 function buildCategoryItem(e: AssetTreeCategory): vscode.TreeItem {
   return {
-    id: e.name,
+    id: `cat:${e.name}`,
     label: e.name.toUpperCase(),
     tooltip: `Asset category: ${e.name}`,
     iconPath: new vscode.ThemeIcon('symbol-folder'),
@@ -61,7 +61,7 @@ function buildAssetItem(e: AssetTreeAsset): vscode.TreeItem {
 
 function buildTagItem(e: AssetTreeTag): vscode.TreeItem {
   return {
-    id: e.name,
+    id: `tag:${e.name}`,
     label: e.name.toUpperCase(),
     tooltip: `Asset tag: ${e.name}`,
     iconPath: new vscode.ThemeIcon('tag'),

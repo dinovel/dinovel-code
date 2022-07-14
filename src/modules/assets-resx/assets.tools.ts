@@ -97,7 +97,6 @@ export function writeAssetMap(map: AssetsMap, appRoot?: string): void {
   const importStatement = `${header}import { AssetsMap } from 'dinovel/modules/assets.ts';\n\n`;
   const textContent = `${importStatement}${START} ${JSON.stringify(map, null, 2)}${END}`;
   fs.writeFileSync(mapFile, textContent, { encoding: 'utf8' });
-  DinovelAssets.update(map);
 }
 
 /**
