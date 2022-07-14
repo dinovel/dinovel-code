@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 
-import { DinovelEvents } from '../../infra';
+import { AppNames, DinovelEvents } from '../../infra';
 import { AssetTree, AssetTreeAsset, AssetTreeCategory, AssetTreeTag } from '../../models';
 import { isAssetTreeCategory, isAssetTreeAsset } from '../../utils/assets';
 import { DinovelAssets } from './assets.tools';
@@ -55,6 +55,7 @@ function buildAssetItem(e: AssetTreeAsset): vscode.TreeItem {
     tooltip: `Type: ${e.kind}`,
     iconPath: getIcon(e.kind),
     collapsibleState: vscode.TreeItemCollapsibleState.Collapsed,
+    contextValue: AppNames.context.asset,
   };
 }
 
@@ -65,6 +66,7 @@ function buildTagItem(e: AssetTreeTag): vscode.TreeItem {
     tooltip: `Asset tag: ${e.name}`,
     iconPath: new vscode.ThemeIcon('tag'),
     collapsibleState: vscode.TreeItemCollapsibleState.None,
+    contextValue: AppNames.context.assetTag,
   };
 }
 
@@ -88,6 +90,7 @@ function getRoot(): AssetTreeCategory[] {
 }
 
 function getCategory(e: AssetTreeCategory): AssetTreeAsset[] {
+  console.error('getItems', DinovelAssets.value);
   return Object.values(DinovelAssets.value)
     .filter(a => a.category === e.name)
     .map(a => ({
@@ -99,6 +102,7 @@ function getCategory(e: AssetTreeCategory): AssetTreeAsset[] {
 }
 
 function getTags(id: string): AssetTreeTag[] {
+  console.error('getTags', DinovelAssets.value[id]?.tags);
   return (DinovelAssets.value[id]?.tags ?? [])
     .map(e => ({
       type: 'tag',

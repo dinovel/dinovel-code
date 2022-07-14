@@ -15,7 +15,7 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -28,6 +28,16 @@
         "command": "dinovel.reloadAssets",
         "title": "Dinovel: Reload assets",
         "icon": "$(refresh)"
+      },
+      {
+        "command": "dinovel.addAssetTag",
+        "title": "Dinovel: Add tag",
+        "icon": "$(tag-add)"
+      },
+      {
+        "command": "dinovel.removeAssetTag",
+        "title": "Dinovel: Remove tag",
+        "icon": "$(remove)"
       }
     ],
     "configuration": {
@@ -78,6 +88,18 @@
           "command": "dinovel.reloadAssets",
           "group": "navigation",
           "when": "view == dinovel-assets"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "dinovel.addAssetTag",
+          "group": "inline",
+          "when": "view == dinovel-assets && viewItem == dinovel-asset-item"
+        },
+        {
+          "command": "dinovel.removeAssetTag",
+          "group": "inline",
+          "when": "view == dinovel-assets && viewItem == dinovel-asset-tag"
         }
       ]
     }

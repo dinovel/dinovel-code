@@ -6,9 +6,16 @@ import { AppNames } from '../../infra';
 import { reloadAssets, DinovelAssets } from './assets.tools';
 import { AssetsTreeViewProvider } from './provider';
 
+import {
+  buildAddTagCommand,
+  buildDelTagCommand,
+} from './commands';
+
 export const ASSETS_RESX_MODULE: ExtensionModule = {
   init: async (context, { workspace }) => {
     context.subscriptions.push(buildReloadAssetsCmd(workspace));
+    context.subscriptions.push(buildAddTagCommand());
+    context.subscriptions.push(buildDelTagCommand());
     context.subscriptions.push(buildAssetsView());
     DinovelAssets.update();
   }
