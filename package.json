@@ -37,7 +37,37 @@
       {
         "command": "dinovel.removeAssetTag",
         "title": "Dinovel: Remove tag",
-        "icon": "$(remove)"
+        "icon": "$(trash)"
+      },
+      {
+        "command": "dinovel.addResourceGroup",
+        "title": "Dinovel: create resource group",
+        "icon": "$(add)"
+      },
+      {
+        "command": "dinovel.removeResourceGroup",
+        "title": "Dinovel: remove resource group",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "dinovel.editResourceGroup",
+        "title": "Dinovel: edit resource group",
+        "icon": "$(pencil)"
+      },
+      {
+        "command": "dinovel.addResourceFromAsset",
+        "title": "Dinovel: create resource",
+        "icon": "$(symbol-constructor)"
+      },
+      {
+        "command": "dinovel.editResource",
+        "title": "Dinovel: edit resource",
+        "icon": "$(pencil)"
+      },
+      {
+        "command": "dinovel.removeResource",
+        "title": "Dinovel: delete resource",
+        "icon": "$(trash)"
       }
     ],
     "configuration": {
@@ -67,17 +97,17 @@
     "views": {
       "dinovel-view": [
         {
-          "id": "dinovel-assets",
-          "contextualTitle": "Dinovel: Assets",
-          "name": "Assets",
+          "id": "dinovel-resources",
+          "contextualTitle": "Dinovel: Resources",
+          "name": "Resources",
           "visibility": "visible",
           "when": "config.dinovel.enabled && workspaceFolderCount > 0"
         },
         {
-          "id": "dinovel-resources",
-          "contextualTitle": "Dinovel: Resources",
-          "name": "Resources",
-          "visibility": "collapsed",
+          "id": "dinovel-assets",
+          "contextualTitle": "Dinovel: Assets",
+          "name": "Assets",
+          "visibility": "visible",
           "when": "config.dinovel.enabled && workspaceFolderCount > 0"
         }
       ]
@@ -88,6 +118,11 @@
           "command": "dinovel.reloadAssets",
           "group": "navigation",
           "when": "view == dinovel-assets"
+        },
+        {
+          "command": "dinovel.addResourceGroup",
+          "group": "navigation",
+          "when": "view == dinovel-resources"
         }
       ],
       "view/item/context": [
@@ -97,9 +132,34 @@
           "when": "view == dinovel-assets && viewItem == dinovel-asset-item"
         },
         {
+          "command": "dinovel.addResourceFromAsset",
+          "group": "inline",
+          "when": "view == dinovel-assets && viewItem == dinovel-asset-item"
+        },
+        {
           "command": "dinovel.removeAssetTag",
           "group": "inline",
           "when": "view == dinovel-assets && viewItem == dinovel-asset-tag"
+        },
+        {
+          "command": "dinovel.editResourceGroup",
+          "group": "inline",
+          "when": "view == dinovel-resources && viewItem == dinovel-resx-group"
+        },
+        {
+          "command": "dinovel.removeResourceGroup",
+          "group": "inline",
+          "when": "view == dinovel-resources && viewItem == dinovel-resx-group"
+        },
+        {
+          "command": "dinovel.editResource",
+          "group": "inline",
+          "when": "view == dinovel-resources && viewItem == dinovel-resx-target"
+        },
+        {
+          "command": "dinovel.removeResource",
+          "group": "inline",
+          "when": "view == dinovel-resources && viewItem == dinovel-resx-target"
         }
       ]
     }

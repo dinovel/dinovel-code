@@ -18,4 +18,4 @@ export async function initExtension(context: vscode.ExtensionContext, config: In
   }
 }
 
-export { DinovelAssets } from './assets-resx';
+export { DinovelAssets, DinovelResx } from './assets-resx';

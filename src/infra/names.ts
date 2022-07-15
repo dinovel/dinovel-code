@@ -5,6 +5,12 @@ export const AppNames = {
     addAssetTag: 'dinovel.addAssetTag',
     removeAssetTag: 'dinovel.removeAssetTag',
     editAssetTag: 'dinovel.editAssetTag',
+    addResourceFromAsset: 'dinovel.addResourceFromAsset',
+    editResource: 'dinovel.editResource',
+    removeResource: 'dinovel.removeResource',
+    addResourceGroup: 'dinovel.addResourceGroup',
+    editResourceGroup: 'dinovel.editResourceGroup',
+    removeResourceGroup: 'dinovel.removeResourceGroup',
     runCommand: 'dinovel.runCommand',
   },
   views: {
@@ -17,6 +23,8 @@ export const AppNames = {
   context: {
     asset: 'dinovel-asset-item',
     assetTag: 'dinovel-asset-tag',
+    resx: 'dinovel-resx-target',
+    resxGroup: 'dinovel-resx-group',
   }
 };
 

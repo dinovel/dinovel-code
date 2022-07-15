@@ -1,10 +1,24 @@
 import * as vscode from 'vscode';
 import { AssetTree, AssetTreeAsset, AssetTreeTag } from '../../models';
 import { AppNames } from '../../infra';
-import { DinovelAssets, updateAssets } from './assets.tools';
+import { DinovelAssets, reloadAssets, updateAssets } from './assets.tools';
 import { Asset } from '../../dinovel';
 
-export function buildAddTagCommand() {
+export function iniAssetsCommands(context: vscode.ExtensionContext, workspace: string) {
+  context.subscriptions.push(buildReloadAssetsCmd(workspace));
+  context.subscriptions.push(buildAddTagCommand());
+  context.subscriptions.push(buildDelTagCommand());
+}
+
+function buildReloadAssetsCmd(rootPath: string) {
+  return vscode.commands.registerCommand(AppNames.commands.reloadAssets, () => {
+    const res = reloadAssets(rootPath);
+    const message = `${res.added} added, ${res.updated} updated, ${res.deleted} deleted, ${res.unchanged} skipped`;
+    vscode.window.showInformationMessage(message);
+  });
+}
+
+function buildAddTagCommand() {
   return vscode.commands.registerCommand(
     AppNames.commands.addAssetTag, async (main?: AssetTree, selected?: AssetTree[]) => {
       const ids = getAssetTreeInput('asset', main, selected)
@@ -38,7 +52,7 @@ export function buildAddTagCommand() {
   });
 }
 
-export function buildDelTagCommand() {
+function buildDelTagCommand() {
   return vscode.commands.registerCommand(
     AppNames.commands.removeAssetTag, async (main?: AssetTree, selected?: AssetTree[]) => {
       const toRemove = getAssetTreeInput('tag', main, selected);
